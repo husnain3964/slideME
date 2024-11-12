@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 100Vh;
+    /* background: linear-gradient(to bottom, rgb(71, 71, 151), white); */
+    background-color: #304b52;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 20px; */
+    background: linear-gradient(to bottom, #012b37, #304b52);
+    padding: 0px 30px;
+    flex-wrap: wrap;
+}
+
+.color {
+    color: white !important;
+    font-size: 35px;
+
+}
+
+.icon {
+    display: none;
+}
+
+.folders {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    color: white;
+    padding: 0px 10px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+}
+
+li :hover {
+    color: rgb(252, 179, 179);
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+}
+
+
+@media screen and (max-width:600px) {
+    li :hover {
+        color: rgb(252, 179, 179) !important;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .nav {
+        position: relative;
+        border-bottom: 2px solid white;
+    }
+
+    .folders {
+        height: 600px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        top: 100px;
+        left: -180px;
+        background-color: #326b79;
+        border-bottom-right-radius: 200px;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .color {
+        font-size: 25px;
+    }
+
+    @keyframes slider {
+        0% {
+            left: -155px;
+        }
+
+        20% {
+            left: -120px;
+        }
+
+        40% {
+            left: -85px;
+        }
+
+        60% {
+            left: -50px;
+        }
+
+        80% {
+            left: -15px;
+        }
+
+        100% {
+            left: 0px;
+        }
+
+    }
+
+
+
+    .sliding {
+        animation: slider  1s linear   forwards ;
+     /* left: 0px;   */
+         
+    }
+
+.hide{
+    left:-180px;
+}
+
+.close{
+    
+    animation: closeSlide 1s linear   forwards;
+   
+}
+@keyframes closeSlide {
+    
+    0% {
+        left: -15px;
+    }
+
+    20% {
+        left: -50px;
+    }
+
+    40% {
+        left: -85px;
+    }
+
+    60% {
+        left: -120px;
+    }
+
+    80% {
+        left: -155px;
+    }
+
+    100% {
+        left: -180px;
+    }
+
+
+}
+
+}
