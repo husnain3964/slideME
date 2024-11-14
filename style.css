@@ -5,8 +5,25 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
+/* card */
+.card{
+    width: 300px;
+    border-radius: 10px;
+padding: 10px;
+}
+.img{
+    border-radius: 10px;
+    height: 260px !important;
+}
+.title{
+color: #012b37;
+padding: 5px;
+}
+.descrip{
+    color:rgb(135, 129, 129);
+    letter-spacing: 1px;
+}
+/* card */
 /* modal */
 
 .modal {
@@ -63,21 +80,17 @@
 
 }
 
-.cardBtn {
+.order {
     background-color: #012b37 !important;
     color: white !important;
+ padding: 10px;
+ border: none;
+ width: 100px;
+ border-radius: 10px;
 }
 
-.colorr {
-    color: #012b37 !important;
-    text-transform: capitalize !important;
-    font-weight: 300 !important;
-}
 
-.card-text {
-    text-transform: capitalize !important;
-    color: gray !important;
-}
+
 
 /* products */
 

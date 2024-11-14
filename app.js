@@ -1,39 +1,34 @@
 // modal
+
 let modal = document.createElement("div");
 let paragraph = document.createElement("p");
 let btn = document.createElement("button");
 paragraph.classList.add("text");
 btn.classList.add("delbtn");
 let text =
-"Hello and welcome! Our kitchen is ready to delight your taste buds. Take a look at our menu and treat yourself to something special!"
-paragraph.textContent=text
-btn.textContent='close'
-modal.appendChild(paragraph)
-modal.appendChild(btn)
-document.querySelector('.products').appendChild(modal)
-
-// modal.style.display='block'
+  "Hello and welcome! Our kitchen is ready to delight your taste buds. Take a look at our menu and treat yourself to something special!";
+paragraph.textContent = text;
+btn.textContent = "close";
+modal.appendChild(paragraph);
+modal.appendChild(btn);
+document.querySelector(".products").appendChild(modal);
 
 modal.classList.add("modal");
 
-btn.addEventListener('click' ,() =>{
-  modal.classList.remove('modal')
-  modal.style.display="none"
-  console.log(modal);
-})
+btn.addEventListener("click", () => {
+  modal.classList.remove("modal");
+  modal.style.display = "none";
+});
 
-// modal
 let slideME = document.querySelector(".folders");
 let slideBtn = document.querySelector(".color");
 
 slideBtn.addEventListener("click", () => {
-  console.log(slideME.innerHTML);
-
   if (
     slideME.classList.contains("hide") ||
     slideME.classList.contains("close")
   ) {
-    console.log("hello");
+    // console.log("hello");
     slideME.classList.remove("close");
     slideME.classList.remove("hide");
     slideME.classList.add("sliding");
@@ -44,6 +39,7 @@ slideBtn.addEventListener("click", () => {
 });
 
 // object
+
 const foodCardsData = [
   {
     id: 1,
@@ -146,7 +142,7 @@ const foodCardsData = [
   {
     id: 12,
     image: "./assets/bb2.jpg",
-    title: "bbq",
+    title: "bbq chicken",
     description: " bbq is the taste of mouth",
     buttonText: "Order Now",
     keysValues: "bbq",
@@ -154,7 +150,7 @@ const foodCardsData = [
   {
     id: 12,
     image: "./assets/bb3.jpg",
-    title: "bbq",
+    title: "bbq  beef",
     description: " bbq is the taste of mouth",
     buttonText: "Order Now",
     keysValues: "bbq",
@@ -162,7 +158,7 @@ const foodCardsData = [
   {
     id: 12,
     image: "./assets/bb4.jpg",
-    title: "bbq",
+    title: "bbq mutton",
     description: " bbq is the taste of mouth",
     buttonText: "Order Now",
     keysValues: "bbq",
@@ -170,7 +166,7 @@ const foodCardsData = [
   {
     id: 12,
     image: "./assets/bb4.jpg",
-    title: "bbq",
+    title: "bbq kabab",
     description: " bbq is the taste of mouth",
     buttonText: "Order Now",
     keysValues: "bbq",
@@ -178,30 +174,112 @@ const foodCardsData = [
   {
     id: 12,
     image: "./assets/bb5.jpg",
-    title: "bbq",
+    title: "bbq special",
     description: " bbq is the taste of mouth",
     buttonText: "Order Now",
     keysValues: "bbq",
   },
+
 ];
 
-// object
+// // object
 
-// collect btn
+// // collect btn
 
 let fastFood = document.querySelector(".fastFood");
 let bbq = document.querySelector(".bbq");
 let platters = document.querySelector(".platter");
-let Dessert = document.querySelector(".endOfMeal");
+let Dessert = document.querySelector(".EndOfMeal");
+
+let cardsParent = document.querySelector(".cards");
+
+let all= document.querySelector('.all')
+cardsParent.innerHTML=""
+all.addEventListener('click', ()=>{
+foodCardsData.forEach((food) => {
+  let card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = ` <img src="${food.image}" alt="" class="img" />
+<h3 class="title">${food.title}</h3>
+<p class="descrip">
+ ${food.description}
+</p>
+<button class="order">${food.buttonText}</button>`;
+
+  cardsParent.appendChild(card);
+});
+})
 
 fastFood.addEventListener("click", () => {
-  let filterBBQ = foodCardsData.filter((cardVal) => {
-    return cardVal.keysValues === "bbq";
-  });
-  // document.querySelector('.card-title').textContent=
+  cardsParent.innerHTML = "";
+  foodCardsData.forEach((food) => {
+    if (food.keysValues == "fastFood") {
+      console.log(food.title);
 
-  console.log(filterBBQ);
-  console.log(filterBBQ.title);
-  console.log(filterBBQ.description);
-  console.log(filterBBQ.buttonText);
+      let fastFoodCard = document.createElement("div");
+      fastFoodCard.classList.add("card");
+      fastFoodCard.innerHTML = `<img src="${food.image}" alt="" class="img" />
+       <h3 class="title">${food.title}</h3>
+      <p class="descrip">
+       ${food.description}
+      </p>
+      <button class="order">${food.buttonText}</button>`;
+      cardsParent.appendChild(fastFoodCard);
+    }
+  });
 });
+
+bbq.addEventListener("click", () => {
+  cardsParent.innerHTML = "";
+  foodCardsData.forEach((food) => {
+    if (food.keysValues == "bbq") {
+      console.log(food.title);
+      let bbqCard = document.createElement("div");
+      bbqCard.classList.add("card");
+      bbqCard.innerHTML = `<img src="${food.image}" alt="" class="img" />
+      <h3 class="title">${food.title}</h3>
+     <p class="descrip">
+      ${food.description}
+     </p>
+     <button class="order">${food.buttonText}</button>`;
+
+      cardsParent.appendChild(bbqCard);
+    }
+  });
+});
+
+
+
+
+
+Dessert.addEventListener("click", () => {
+  cardsParent.innerHTML = "";
+  foodCardsData.forEach((food) => {
+    if (food.keysValues == "sweet") {
+      console.log(food.title);
+      let sweetCard = document.createElement("div");
+      sweetCard.classList.add("card");
+      sweetCard.innerHTML = `<img src="${food.image}" alt="" class="img" />
+      <h3 class="title">${food.title}</h3>
+     <p class="descrip">
+      ${food.description}
+     </p>
+     <button class="order">${food.buttonText}</button>`;
+
+      cardsParent.appendChild(sweetCard);
+    }
+  });
+});
+
+
+
+
+
+
+let userVal= document.querySelector('.inp')
+let searchBtn = document.querySelector('.btn') 
+
+searchBtn.addEventListener('click', ()=>{
+  console.log(userVal.value);
+})
