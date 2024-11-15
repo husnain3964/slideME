@@ -277,9 +277,38 @@ Dessert.addEventListener("click", () => {
 
 
 
-let userVal= document.querySelector('.inp')
+let user= document.querySelector('.inp')
 let searchBtn = document.querySelector('.btn') 
 
 searchBtn.addEventListener('click', ()=>{
-  console.log(userVal.value);
+ let userinp = user.value.toLowerCase()
+  console.log(userinp);
+ cardsParent.innerHTML=''
+  foodCardsData.forEach(food =>{
+    if(food.title.toLowerCase()==userinp){
+      console.log(food);
+      let userDemand = document.createElement("div");
+      userDemand.classList.add("card");
+      userDemand.innerHTML = `<img src="${food.image}" alt="" class="img" />
+      <h3 class="title">${food.title}</h3>
+     <p class="descrip">
+      ${food.description}
+     </p>
+     <button class="order">${food.buttonText}</button>`;
+
+      cardsParent.appendChild(userDemand);
+
+
+
+    }else{
+      // modal.classList.add("modal")
+    //  cardsParent.appendChild(modal)
+    }
+  })
+ 
+ 
+ 
+ 
+
+
 })

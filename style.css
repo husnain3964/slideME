@@ -207,7 +207,13 @@ h1 {
     }
 
     .search {
-        display: none;
+        display: block;
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .inp{
+        font-size: 20px;
+        width: 200px;
     }
 
 
@@ -222,6 +228,7 @@ h1 {
     }
 
     .navv {
+        padding: 5px;
         position: relative;
         border-bottom: 2px solid white;
         /* flex-direction: column; */
